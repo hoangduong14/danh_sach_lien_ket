@@ -10,6 +10,14 @@
 
     <!-- Webchat Botpress Script -->
     <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/10/05/14/20251005142702-PO3L3HSX.js" defer></script>
+    <script>
+        window.botpressWebChat.init({
+            host: 'https://cdn.botpress.cloud',      // Đảm bảo đúng với URL Botpress Cloud
+            botId: 'PO3L3HSX',                      // ID Bot của bạn, thay bằng đúng bot ID
+            userId: 'unique-user-id',               // ID người dùng duy nhất, có thể là email hoặc session ID
+            language: 'en'                          // Ngôn ngữ của bot
+        });
+    </script>
+
 </body>
 </html>
