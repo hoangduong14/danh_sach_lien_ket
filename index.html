@@ -11,11 +11,20 @@
     <!-- Webchat Botpress Script -->
     <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
     <script>
-        window.botpressWebChat.init({
-            host: 'https://cdn.botpress.cloud',      // Đảm bảo đúng với URL Botpress Cloud
-            botId: 'PO3L3HSX',                      // ID Bot của bạn, thay bằng đúng bot ID
-            userId: 'unique-user-id',               // ID người dùng duy nhất, có thể là email hoặc session ID
-            language: 'en'                          // Ngôn ngữ của bot
+        // Chờ script inject.js của Botpress được tải xong
+        window.addEventListener('load', function() {
+            // Kiểm tra xem window.botpressWebChat đã sẵn sàng chưa
+            if (window.botpressWebChat) {
+                window.botpressWebChat.init({
+                    host: 'https://cdn.botpress.cloud',  // URL của Botpress Cloud
+                    botId: 'PO3L3HSX',                  // ID bot của bạn
+                    userId: 'unique-user-id',           // ID người dùng duy nhất
+                    language: 'en',                     // Ngôn ngữ bot
+                    showPoweredBy: false                // Ẩn thông tin Botpress nếu muốn
+                });
+            } else {
+                console.error('Webchat không thể khởi tạo vì botpressWebChat không sẵn sàng.');
+            }
         });
     </script>
 
