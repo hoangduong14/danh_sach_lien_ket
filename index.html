@@ -8,23 +8,9 @@
 <body>
     <h1>Test Webchat Botpress</h1>
 
-    <!-- Webchat Botpress Script -->
-    <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-    <script>
-        // Kiểm tra nếu script Botpress đã sẵn sàng
-        var checkWebchatReady = setInterval(function() {
-            if (window.botpressWebChat) {
-                clearInterval(checkWebchatReady); // Dừng kiểm tra nếu botpressWebChat đã sẵn sàng
-                window.botpressWebChat.init({
-                    host: 'https://cdn.botpress.cloud',  // URL của Botpress Cloud
-                    botId: 'PO3L3HSX',                  // ID bot của bạn
-                    userId: 'unique-user-id',           // ID người dùng duy nhất
-                    language: 'en',                     // Ngôn ngữ bot
-                    showPoweredBy: false                // Ẩn thông tin Botpress nếu muốn
-                });
-            }
-        }, 100); // Kiểm tra mỗi 100ms, đảm bảo Webchat tải nhanh
-    </script>
+    <!-- Nhúng Webchat từ URL Shareable -->
+    <iframe src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/10/05/14/20251005142702-W2KJ5BKB.json"
+            style="position: fixed; bottom: 0; right: 0; width: 400px; height: 600px; border: none; z-index: 9999;"></iframe>
 
 </body>
 </html>
